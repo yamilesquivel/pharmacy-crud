@@ -1,6 +1,6 @@
 
-package FORMULARIOS;
-import Desarrollo.AbmLoguin;
+package vista;
+import controlador.AbmLoguin;
 
 import javax.swing.JOptionPane;
 

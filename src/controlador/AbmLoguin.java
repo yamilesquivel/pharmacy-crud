@@ -1,9 +1,9 @@
 
-package Desarrollo;
+package controlador;
 
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import BDD.Conexion;
+import modelo.Conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 

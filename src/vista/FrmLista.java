@@ -1,5 +1,5 @@
 
-package FORMULARIOS;
+package vista;
 import javax.swing.DefaultListModel;
 
 

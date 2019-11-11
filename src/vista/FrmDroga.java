@@ -1,5 +1,5 @@
-package FORMULARIOS;
-import DESARROLLO.AbmDroga;
+package vista;
+import controlador.AbmDroga;
 import javax.swing.JOptionPane;
 // import javax.swing.DefaultListModel;
 

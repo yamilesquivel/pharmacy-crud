@@ -1,17 +1,17 @@
 
-package FORMULARIOS;
-import DESARROLLO.AbmClientes;
+package vista;
+import controlador.AbmCategorias;
 import javax.swing.JOptionPane;
 
 
 
-public class FrmClientes extends javax.swing.JInternalFrame {
-    AbmClientes ObjClientes;
-    AbmClientes ObjClientes2;
-    private String NomClientesBorrar = null;
+public class FrmCategorias extends javax.swing.JInternalFrame {
+    AbmCategorias ObjCat;
+    AbmCategorias ObjCat2;
+    private String NomCatBorrar = null;
     private String NomViejo = null;
  
-    public FrmClientes() 
+    public FrmCategorias() 
     {
         initComponents();
         this.PnlConsultaItem.setVisible(false); //ocultamosel panel de los items
@@ -44,12 +44,12 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         TxtNombre = new javax.swing.JTextField();
         PnlConsultaItem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ListaClientes = new javax.swing.JList<>();
+        ListaCategorias = new javax.swing.JList<>();
 
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
-        setTitle("Cliente");
+        setTitle("Categoria");
 
         PanelPPalCat.setBackground(new java.awt.Color(255, 255, 204));
 
@@ -141,12 +141,13 @@ public class FrmClientes extends javax.swing.JInternalFrame {
                     .addGroup(PanelBtnCatLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(BtnConsultas)
-                        .addGap(85, 85, 85)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnSalir))
                     .addGroup(PanelBtnCatLayout.createSequentialGroup()
                         .addGap(110, 110, 110)
-                        .addComponent(BtnCancelar)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addComponent(BtnCancelar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         PanelBtnCatLayout.setVerticalGroup(
             PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,8 +174,7 @@ public class FrmClientes extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        LblCatProd.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LblCatProd.setText("CLIENTE");
+        LblCatProd.setText("CATEGORIA DE PRODUCTOS");
 
         LblNombre.setText("NOMBRE");
 
@@ -187,23 +187,23 @@ public class FrmClientes extends javax.swing.JInternalFrame {
 
         PnlConsultaItem.setBackground(new java.awt.Color(0, 255, 204));
 
-        ListaClientes.setBackground(new java.awt.Color(204, 255, 204));
-        jScrollPane1.setViewportView(ListaClientes);
+        ListaCategorias.setBackground(new java.awt.Color(204, 255, 204));
+        jScrollPane1.setViewportView(ListaCategorias);
 
         javax.swing.GroupLayout PnlConsultaItemLayout = new javax.swing.GroupLayout(PnlConsultaItem);
         PnlConsultaItem.setLayout(PnlConsultaItemLayout);
         PnlConsultaItemLayout.setHorizontalGroup(
             PnlConsultaItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnlConsultaItemLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlConsultaItemLayout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
         PnlConsultaItemLayout.setVerticalGroup(
             PnlConsultaItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlConsultaItemLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -214,37 +214,31 @@ public class FrmClientes extends javax.swing.JInternalFrame {
             .addGroup(PanelPPalCatLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PanelBtnCat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                        .addComponent(PanelBtnCat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
                         .addComponent(LblNombre)
-                        .addGap(46, 46, 46)
-                        .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(94, 94, 94)
+                        .addGap(31, 31, 31)
+                        .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LblCatProd)
+                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                .addGap(336, 336, 336)
-                .addComponent(LblCatProd)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(14, 14, 14)))
+                .addContainerGap())
         );
         PanelPPalCatLayout.setVerticalGroup(
             PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPPalCatLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPPalCatLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LblCatProd)
                 .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                        .addGap(99, 99, 99)
+                        .addComponent(LblCatProd)
+                        .addGap(47, 47, 47)
                         .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LblNombre)))
-                    .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                            .addComponent(LblNombre)
+                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(PanelBtnCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -272,8 +266,8 @@ public class FrmClientes extends javax.swing.JInternalFrame {
 
     private void BtnAltasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAltasActionPerformed
         String Nombre = this.TxtNombre.getText();
-        ObjClientes = new AbmClientes(Nombre);
-        ObjClientes.Alta();
+        ObjCat = new AbmCategorias(Nombre);
+        ObjCat.Alta();
         Limpiar();
         
     }//GEN-LAST:event_BtnAltasActionPerformed
@@ -290,13 +284,13 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         this.BtnModificaciones.setVisible(false);
         this.BtnConsultas.setVisible(false);
         Ocultar();
-        this.ListaClientes.setVisible(true);
+        this.ListaCategorias.setVisible(true);
         this.BtnCancelar.setVisible(true);
         this.BtnEliminar.setVisible(true);        
         this.BtnBajas.setVisible(false);
         this.PnlConsultaItem.setVisible(true);
         
-        NomClientesBorrar = this.ListaClientes.getSelectedValue();
+        NomCatBorrar = this.ListaCategorias.getSelectedValue();
     }//GEN-LAST:event_BtnBajasActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
@@ -312,19 +306,19 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         if ( z == 0) 
         
         {
-            ObjClientes = new AbmClientes();
-            ObjClientes2.setNom(NomClientesBorrar); // ENVIO AL EL DATO ELEGIDO AL ATRIBUTO   
-            ObjClientes2.Baja(); // EJECTURA LA INSTRUCCION DE BORRAR DE MYSQL
+            ObjCat2 = new AbmCategorias();
+            ObjCat2.setNom(NomCatBorrar); // ENVIO AL EL DATO ELEGIDO AL ATRIBUTO   
+            ObjCat2.Baja(); // EJECTURA LA INSTRUCCION DE BORRAR DE MYSQL
             this.TxtNombre.setText(null);
-            ObjClientes2 = new AbmClientes();
-            ListaClientes.setModel(ObjClientes2.Muestro());
+            ObjCat2 = new AbmCategorias();
+            ListaCategorias.setModel(ObjCat2.Muestro());
             Visible();
         }
         
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     private void BtnConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsultasActionPerformed
-       this.ListaClientes.setVisible(true);
+       this.ListaCategorias.setVisible(true);
        this.BtnSalir.setVisible(true);
        this.BtnBajas.setVisible(true);
        this.BtnModificaciones.setVisible(true);
@@ -335,9 +329,9 @@ public class FrmClientes extends javax.swing.JInternalFrame {
        this.BtnEliminar.setVisible(false);
        this.BtnConsultas.setVisible(false);
        
-        ObjClientes2 = new AbmClientes();
+        ObjCat2 = new AbmCategorias();
         //ObjCat2.Muestro();
-        this.ListaClientes.setModel(ObjClientes2.Muestro());
+        this.ListaCategorias.setModel(ObjCat2.Muestro());
     
         
     }//GEN-LAST:event_BtnConsultasActionPerformed
@@ -351,7 +345,7 @@ public class FrmClientes extends javax.swing.JInternalFrame {
       this.BtnConsultas.setVisible(false);
       Ocultar ();
       
-      NomViejo = this.ListaClientes.getSelectedValue(); // TOMA EL VALOR QUE QUIERE MODIFICAR
+      NomViejo = this.ListaCategorias.getSelectedValue(); // TOMA EL VALOR QUE QUIERE MODIFICAR
       this.TxtNombre.setText(NomViejo); // se lo manda al atributo porque lo necesita para encontrar en la tabla
       this.TxtNombre.setVisible(true); // habilita el label y la tabla
       this.LblNombre.setVisible(true);
@@ -360,12 +354,12 @@ public class FrmClientes extends javax.swing.JInternalFrame {
 
     private void BtnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarActionPerformed
         String NomAct = this.TxtNombre.getText();
-        ObjClientes2 = new AbmClientes(NomViejo); 
-        ObjClientes2.Modif(NomAct);
+        ObjCat2 = new AbmCategorias(NomViejo); 
+        ObjCat2.Modif(NomAct);
         
         Limpiar ();
         
-        ListaClientes.setModel(ObjClientes2.Muestro());
+        ListaCategorias.setModel(ObjCat2.Muestro());
         Visible();
         
     }//GEN-LAST:event_BtnActualizarActionPerformed
@@ -438,7 +432,7 @@ public class FrmClientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnSalir;
     private javax.swing.JLabel LblCatProd;
     private javax.swing.JLabel LblNombre;
-    private javax.swing.JList<String> ListaClientes;
+    private javax.swing.JList<String> ListaCategorias;
     private javax.swing.JPanel PanelBtnCat;
     private javax.swing.JPanel PanelPPalCat;
     private javax.swing.JPanel PnlConsultaItem;

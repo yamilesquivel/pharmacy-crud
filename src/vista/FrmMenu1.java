@@ -1,5 +1,5 @@
 
-package FORMULARIOS;
+package vista;
 
 
 public class FrmMenu1 extends javax.swing.JFrame {

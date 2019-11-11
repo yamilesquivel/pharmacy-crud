@@ -1,17 +1,17 @@
 
-package FORMULARIOS;
-import DESARROLLO.AbmCategorias;
+package vista;
+import controlador.AbmLaboratorio;
 import javax.swing.JOptionPane;
 
 
 
-public class FrmCategorias extends javax.swing.JInternalFrame {
-    AbmCategorias ObjCat;
-    AbmCategorias ObjCat2;
-    private String NomCatBorrar = null;
+public class FrmLaboratorio extends javax.swing.JInternalFrame {
+    AbmLaboratorio ObjLab;
+    AbmLaboratorio ObjLab2;
+    private String NomLabBorrar = null;
     private String NomViejo = null;
  
-    public FrmCategorias() 
+    public FrmLaboratorio() 
     {
         initComponents();
         this.PnlConsultaItem.setVisible(false); //ocultamosel panel de los items
@@ -44,12 +44,12 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
         TxtNombre = new javax.swing.JTextField();
         PnlConsultaItem = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ListaCategorias = new javax.swing.JList<>();
+        ListaLaboratorios = new javax.swing.JList<>();
 
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
-        setTitle("Categoria");
+        setTitle("Laboratorio");
 
         PanelPPalCat.setBackground(new java.awt.Color(255, 255, 204));
 
@@ -174,7 +174,7 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        LblCatProd.setText("CATEGORIA DE PRODUCTOS");
+        LblCatProd.setText("LABORATORIOS DE PRODUCTOS");
 
         LblNombre.setText("NOMBRE");
 
@@ -187,23 +187,23 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
 
         PnlConsultaItem.setBackground(new java.awt.Color(0, 255, 204));
 
-        ListaCategorias.setBackground(new java.awt.Color(204, 255, 204));
-        jScrollPane1.setViewportView(ListaCategorias);
+        ListaLaboratorios.setBackground(new java.awt.Color(204, 255, 204));
+        jScrollPane1.setViewportView(ListaLaboratorios);
 
         javax.swing.GroupLayout PnlConsultaItemLayout = new javax.swing.GroupLayout(PnlConsultaItem);
         PnlConsultaItem.setLayout(PnlConsultaItemLayout);
         PnlConsultaItemLayout.setHorizontalGroup(
             PnlConsultaItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlConsultaItemLayout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         PnlConsultaItemLayout.setVerticalGroup(
             PnlConsultaItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnlConsultaItemLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlConsultaItemLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -218,29 +218,29 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
                     .addGroup(PanelPPalCatLayout.createSequentialGroup()
                         .addComponent(LblNombre)
                         .addGap(31, 31, 31)
-                        .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                                .addComponent(LblCatProd)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(160, 160, 160)
-                        .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)))
+                        .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPPalCatLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+            .addGroup(PanelPPalCatLayout.createSequentialGroup()
+                .addGap(228, 228, 228)
+                .addComponent(LblCatProd)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelPPalCatLayout.setVerticalGroup(
             PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPPalCatLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                        .addComponent(LblCatProd)
-                        .addGap(47, 47, 47)
-                        .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LblNombre)
-                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(LblCatProd)
+                .addGap(47, 47, 47)
+                .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblNombre)
+                    .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(PanelBtnCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -268,8 +268,8 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
 
     private void BtnAltasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAltasActionPerformed
         String Nombre = this.TxtNombre.getText();
-        ObjCat = new AbmCategorias(Nombre);
-        ObjCat.Alta();
+        ObjLab = new AbmLaboratorio(Nombre);
+        ObjLab.Alta();
         Limpiar();
         
     }//GEN-LAST:event_BtnAltasActionPerformed
@@ -286,13 +286,13 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
         this.BtnModificaciones.setVisible(false);
         this.BtnConsultas.setVisible(false);
         Ocultar();
-        this.ListaCategorias.setVisible(true);
+        this.ListaLaboratorios.setVisible(true);
         this.BtnCancelar.setVisible(true);
         this.BtnEliminar.setVisible(true);        
         this.BtnBajas.setVisible(false);
         this.PnlConsultaItem.setVisible(true);
         
-        NomCatBorrar = this.ListaCategorias.getSelectedValue();
+        NomLabBorrar = this.ListaLaboratorios.getSelectedValue();
     }//GEN-LAST:event_BtnBajasActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
@@ -308,19 +308,19 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
         if ( z == 0) 
         
         {
-            ObjCat2 = new AbmCategorias();
-            ObjCat2.setNom(NomCatBorrar); // ENVIO AL EL DATO ELEGIDO AL ATRIBUTO   
-            ObjCat2.Baja(); // EJECTURA LA INSTRUCCION DE BORRAR DE MYSQL
+            ObjLab = new AbmLaboratorio();
+            ObjLab.setNom(NomLabBorrar); // ENVIO AL EL DATO ELEGIDO AL ATRIBUTO   
+            ObjLab.Baja(); // EJECTURA LA INSTRUCCION DE BORRAR DE MYSQL
             this.TxtNombre.setText(null);
-            ObjCat2 = new AbmCategorias();
-            ListaCategorias.setModel(ObjCat2.Muestro());
+            ObjLab = new AbmLaboratorio();
+            ListaLaboratorios.setModel(ObjLab.Muestro());
             Visible();
         }
         
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     private void BtnConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsultasActionPerformed
-       this.ListaCategorias.setVisible(true);
+       this.ListaLaboratorios.setVisible(true);
        this.BtnSalir.setVisible(true);
        this.BtnBajas.setVisible(true);
        this.BtnModificaciones.setVisible(true);
@@ -331,9 +331,9 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
        this.BtnEliminar.setVisible(false);
        this.BtnConsultas.setVisible(false);
        
-        ObjCat2 = new AbmCategorias();
+        ObjLab2 = new AbmLaboratorio();
         //ObjCat2.Muestro();
-        this.ListaCategorias.setModel(ObjCat2.Muestro());
+        this.ListaLaboratorios.setModel(ObjLab2.Muestro());
     
         
     }//GEN-LAST:event_BtnConsultasActionPerformed
@@ -347,7 +347,7 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
       this.BtnConsultas.setVisible(false);
       Ocultar ();
       
-      NomViejo = this.ListaCategorias.getSelectedValue(); // TOMA EL VALOR QUE QUIERE MODIFICAR
+      NomViejo = this.ListaLaboratorios.getSelectedValue(); // TOMA EL VALOR QUE QUIERE MODIFICAR
       this.TxtNombre.setText(NomViejo); // se lo manda al atributo porque lo necesita para encontrar en la tabla
       this.TxtNombre.setVisible(true); // habilita el label y la tabla
       this.LblNombre.setVisible(true);
@@ -356,12 +356,12 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
 
     private void BtnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarActionPerformed
         String NomAct = this.TxtNombre.getText();
-        ObjCat2 = new AbmCategorias(NomViejo); 
-        ObjCat2.Modif(NomAct);
+        ObjLab2 = new AbmLaboratorio(NomViejo); 
+        ObjLab2.Modif(NomAct);
         
         Limpiar ();
         
-        ListaCategorias.setModel(ObjCat2.Muestro());
+        ListaLaboratorios.setModel(ObjLab2.Muestro());
         Visible();
         
     }//GEN-LAST:event_BtnActualizarActionPerformed
@@ -434,7 +434,7 @@ public class FrmCategorias extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnSalir;
     private javax.swing.JLabel LblCatProd;
     private javax.swing.JLabel LblNombre;
-    private javax.swing.JList<String> ListaCategorias;
+    private javax.swing.JList<String> ListaLaboratorios;
     private javax.swing.JPanel PanelBtnCat;
     private javax.swing.JPanel PanelPPalCat;
     private javax.swing.JPanel PnlConsultaItem;

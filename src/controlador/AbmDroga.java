@@ -1,5 +1,5 @@
-package DESARROLLO;
-import BDD.Conexion;
+package controlador;
+import modelo.Conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

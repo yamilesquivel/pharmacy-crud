@@ -1,7 +1,7 @@
 
-package DESARROLLO;
+package controlador;
 
-import BDD.Conexion;
+import modelo.Conexion;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
@@ -9,25 +9,25 @@ import java.sql.ResultSet;
 import javax.swing.DefaultListModel;
 
 
-public class AbmClientes {
+public class AbmLaboratorio {
     
      private String Nom;
-     private String ConsultaSql= "SELECT * FROM cliente;"; 
-     private String AltaSql = "INSERT INTO cliente (NomCli) VALUES (?);";
-     private String Borrar = "DELETE FROM cliente WHERE NomCli=(?);";
+     private String ConsultaSql= "SELECT * FROM laboratorio;";//loq esta entrer " es de mysql
+     private String AltaSql = "INSERT INTO laboratorio (NomLab) VALUES (?);";
+     private String Borrar = "DELETE FROM laboratorio WHERE NomLab =(?);";
      
     PreparedStatement Instruccion;
     ResultSet Muestra;
-    DefaultListModel ModeloListaCliente = new  DefaultListModel();
+    DefaultListModel ModeloListaLaboratorio = new  DefaultListModel();
     
     Conexion z =new Conexion(); 
     
-     public AbmClientes (String Nom) 
+     public AbmLaboratorio (String Nom) 
     {
         this.Nom = Nom;
     }
      
-       public AbmClientes ()
+       public AbmLaboratorio ()
     {
         
     }
@@ -90,7 +90,7 @@ public class AbmClientes {
     
       public void Modif (String NomNuevo)
       {
-          String Cambia = "UPDATE cliente SET NomCli= '" + NomNuevo +"' WHERE NomCli ='" + this.getNom() +"';" ;
+          String Cambia = "UPDATE laboratorio SET NomLab = '" + NomNuevo +"' WHERE NomLab ='" + this.getNom() +"';" ;
           try 
         {
             Instruccion = z.MeConecto().prepareStatement(Cambia);            
@@ -122,7 +122,7 @@ public class AbmClientes {
             while (Muestra.next())
             {
                 
-                ModeloListaCliente.addElement (Muestra.getString(2));
+                ModeloListaLaboratorio.addElement (Muestra.getString(2));
                 
             }            
         } catch (Exception e) 
@@ -131,7 +131,7 @@ public class AbmClientes {
             JOptionPane.showMessageDialog(null, "No pudo ingresar los datos"+ e);
         }
         
-        return ModeloListaCliente;
+        return ModeloListaLaboratorio;
     }
 }
 

@@ -1,9 +1,9 @@
 
-package FORMULARIOS;
+package vista;
 import java.util.Date; //tipos de datos fecha
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
-import DESARROLLO.AbmFechas;
+import controlador.AbmFechas;
 
 
 
@@ -185,11 +185,13 @@ public class FrmFecha extends javax.swing.JInternalFrame {
         varfechafin=this.fechafin.getDate();
         varfechaactual=this.fechaactual.getDate();
         
-        objfecha =new AbmFechas(Sqlfechaactual, Sqlfechainicio, Sqlfechafin);
-        objfecha.Alta();
         java.sql.Date sqlfechainicio = ConvertirAsql(varfechainicio);
-        java.sql.Date sqlfechaactual = ConvertirAsql(varfechaactual);
+        java.sql.Date sqlfechaactual =  ConvertirAsql(varfechaactual);
         java.sql.Date sqlfechafin = ConvertirAsql(varfechafin);
+        
+        objfecha =new AbmFechas(sqlfechaactual, sqlfechainicio, sqlfechafin);
+        objfecha.Alta();
+        
     }//GEN-LAST:event_btingresarActionPerformed
 
     

@@ -1,5 +1,5 @@
 
-package DESARROLLO;
+package controlador;
 
 
 public class AbmVentas {
