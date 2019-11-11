@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
+import javax.swing.JOptionPane;
+
 
 public class AbmFechas {
     Date fechaactual;
@@ -24,7 +26,7 @@ public class AbmFechas {
     ResultSet Muestra;
      private String AltaSql = "INSERT INTO categoria (fechainicio,fechaactual,fechafinal) VALUES (?,?,?);";
      
-   
+    Conexion c = new Conexion();
       
     public Date getFechaactual() {
         return fechaactual;
@@ -43,15 +45,16 @@ public class AbmFechas {
     {
           try 
         {
-            Instruccion = z.MeConecto().prepareStatement(AltaSql);     
-            Instruccion= setDate(1,this.getFechainicio());
-            Instruccion= setDate(2,this.getFechaactual());
-            Instruccion= setDate(1,this.getFechafin());
+            Instruccion = c.MeConecto().prepareStatement(AltaSql);     
+             Instruccion.setDate(1,this.getFechainicio());
+            Instruccion.setDate(2,this.getFechaactual());
+            Instruccion.setDate(1,this.getFechafin());
             int Registro = Instruccion.executeUpdate();
             if (Registro > 0) 
             {
                 JOptionPane.showMessageDialog(null, "Registro guardado correctamente");
-                z.MeConecto().close();  // esta instruccion en realidad se pone cuando el usuario aprieta el boton salir
+                c.MeConecto().close(); 
+                // esta instruccion en realidad se pone cuando el usuario aprieta el boton salir
                 // estas ultimas 2 instrucciones son (X PEDAGOGÍA) para corroborar q ingresé cada registro 
             }
            
