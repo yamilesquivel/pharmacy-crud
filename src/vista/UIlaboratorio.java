@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 
 
 
-public class FrmLaboratorio extends javax.swing.JInternalFrame {
+public class UIlaboratorio extends javax.swing.JInternalFrame {
     AbmLaboratorio ObjLab;
     AbmLaboratorio ObjLab2;
     private String NomLabBorrar = null;
     private String NomViejo = null;
  
-    public FrmLaboratorio() 
+    public UIlaboratorio() 
     {
         initComponents();
         this.PnlConsultaItem.setVisible(false); //ocultamosel panel de los items

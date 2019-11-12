@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Date;
 import javax.swing.JOptionPane;
 
+// Alta, baja ,modificacion de la base de datos
 
 public class AbmFechas {
     Date fechaactual;

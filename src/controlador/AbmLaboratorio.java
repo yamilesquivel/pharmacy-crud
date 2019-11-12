@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.DefaultListModel;
 
+// Alta, baja ,modificacion de la base de datos
 
 public class AbmLaboratorio {
     

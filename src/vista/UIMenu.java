@@ -1,14 +1,19 @@
 
 package vista;
 
+import java.awt.Color;
 
-public class FrmMenu1 extends javax.swing.JFrame {
+
+public class UIMenu extends javax.swing.JFrame {
   
-    public FrmMenu1() {
+    public UIMenu() {
         initComponents();
         
-        this.setTitle("ROMPECABEZAS");
-        this.setLocationRelativeTo(null);// para que el formulario ap'arezca centrado en la pantalla
+        this.setTitle("GESTOR  DE FARMACIA");
+        this.setLocationRelativeTo(null);// para que el formulario aparezca centrado en la pantalla
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+       
+        this.PanelEscritorio.setBackground(Color.red);
     }
 
     
@@ -19,67 +24,69 @@ public class FrmMenu1 extends javax.swing.JFrame {
         PanelEscritorio = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         MenuArticulos = new javax.swing.JMenu();
-        MenuCategoria = new javax.swing.JMenuItem();
-        MenuProducto = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
+        categoriaMenu = new javax.swing.JMenuItem();
+        productoMenu = new javax.swing.JMenuItem();
+        laboratorioMenu = new javax.swing.JMenuItem();
+        drogaMenu = new javax.swing.JMenuItem();
+        exitMenu = new javax.swing.JMenuItem();
         MenuClientes = new javax.swing.JMenu();
         MenuAmbClientes = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         MenuVentas = new javax.swing.JMenu();
         MenuIngVtas = new javax.swing.JMenuItem();
-        SALIR = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         MenuArticulos.setMnemonic('f');
         MenuArticulos.setText("Articulos");
 
-        MenuCategoria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_MASK));
-        MenuCategoria.setMnemonic('o');
-        MenuCategoria.setText("Categoria");
-        MenuCategoria.addActionListener(new java.awt.event.ActionListener() {
+        categoriaMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_MASK));
+        categoriaMenu.setMnemonic('o');
+        categoriaMenu.setText("Categoria");
+        categoriaMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuCategoriaActionPerformed(evt);
+                categoriaMenuActionPerformed(evt);
             }
         });
-        MenuArticulos.add(MenuCategoria);
+        MenuArticulos.add(categoriaMenu);
 
-        MenuProducto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        MenuProducto.setMnemonic('a');
-        MenuProducto.setText("Producto");
-        MenuProducto.addActionListener(new java.awt.event.ActionListener() {
+        productoMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        productoMenu.setMnemonic('a');
+        productoMenu.setText("Producto");
+        productoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuProductoActionPerformed(evt);
+                productoMenuActionPerformed(evt);
             }
         });
-        MenuArticulos.add(MenuProducto);
+        MenuArticulos.add(productoMenu);
 
-        jMenuItem1.setText("Laboratorio");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        laboratorioMenu.setText("Laboratorio");
+        laboratorioMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                laboratorioMenuActionPerformed(evt);
             }
         });
-        MenuArticulos.add(jMenuItem1);
+        MenuArticulos.add(laboratorioMenu);
 
-        jMenuItem2.setText("Droga");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        drogaMenu.setText("Droga");
+        drogaMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                drogaMenuActionPerformed(evt);
             }
         });
-        MenuArticulos.add(jMenuItem2);
+        MenuArticulos.add(drogaMenu);
 
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Exit");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        exitMenu.setMnemonic('x');
+        exitMenu.setText("Exit");
+        exitMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
+                exitMenuActionPerformed(evt);
             }
         });
-        MenuArticulos.add(exitMenuItem);
+        MenuArticulos.add(exitMenu);
 
         menuBar.add(MenuArticulos);
 
@@ -93,7 +100,7 @@ public class FrmMenu1 extends javax.swing.JFrame {
 
         MenuAmbClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         MenuAmbClientes.setMnemonic('t');
-        MenuAmbClientes.setText("ABM Clientes");
+        MenuAmbClientes.setText("Ingreso de Clientes");
         MenuAmbClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuAmbClientesActionPerformed(evt);
@@ -101,9 +108,11 @@ public class FrmMenu1 extends javax.swing.JFrame {
         });
         MenuClientes.add(MenuAmbClientes);
 
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
-        MenuClientes.add(deleteMenuItem);
+        jMenuItem5.setText("Consulta de Clientes");
+        MenuClientes.add(jMenuItem5);
+
+        jMenuItem6.setText("Modificacion de Clientes");
+        MenuClientes.add(jMenuItem6);
 
         menuBar.add(MenuClientes);
 
@@ -120,10 +129,13 @@ public class FrmMenu1 extends javax.swing.JFrame {
         });
         MenuVentas.add(MenuIngVtas);
 
-        menuBar.add(MenuVentas);
+        jMenuItem3.setText("Consulta de Ventas");
+        MenuVentas.add(jMenuItem3);
 
-        SALIR.setText("Salir");
-        menuBar.add(SALIR);
+        jMenuItem4.setText("Modificacion de Ventas");
+        MenuVentas.add(jMenuItem4);
+
+        menuBar.add(MenuVentas);
 
         setJMenuBar(menuBar);
 
@@ -143,7 +155,7 @@ public class FrmMenu1 extends javax.swing.JFrame {
 
     private void MenuIngVtasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuIngVtasActionPerformed
 
-        FrmFecha Vta= new FrmFecha();
+        UIventas Vta= new UIventas();
         PanelEscritorio.add(Vta);
         Vta.show();
         /*FrmVenta Vta= new FrmVenta();
@@ -153,55 +165,55 @@ public class FrmMenu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuIngVtasActionPerformed
 
     private void MenuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuClientesActionPerformed
-        FrmClientes Cliente = new FrmClientes ();
+        UIclientes Cliente = new UIclientes ();
         PanelEscritorio.add(Cliente);
         Cliente.show();
     }//GEN-LAST:event_MenuClientesActionPerformed
 
     private void MenuAmbClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAmbClientesActionPerformed
 
-        FrmClientes Cliente= new FrmClientes();
+        UIclientes Cliente= new UIclientes();
         PanelEscritorio.add(Cliente);
         Cliente.show();
     }//GEN-LAST:event_MenuAmbClientesActionPerformed
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
+    private void exitMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuActionPerformed
         System.exit(0);
         //this.dispose();
 
-    }//GEN-LAST:event_exitMenuItemActionPerformed
+    }//GEN-LAST:event_exitMenuActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        FrmDroga Droga = new FrmDroga ();
+    private void drogaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drogaMenuActionPerformed
+        UIdroga Droga = new UIdroga ();
         PanelEscritorio.add(Droga);
         Droga.show();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_drogaMenuActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        FrmLaboratorio Lab = new FrmLaboratorio ();
-        PanelEscritorio.add(Lab);
-        Lab.show();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void laboratorioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laboratorioMenuActionPerformed
+        UIlaboratorio Laboratorio = new UIlaboratorio ();
+        PanelEscritorio.add(Laboratorio);
+        Laboratorio.show();
+    }//GEN-LAST:event_laboratorioMenuActionPerformed
 
-    private void MenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuProductoActionPerformed
+    private void productoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productoMenuActionPerformed
 
-        FrmProductos Producto = new FrmProductos ();
+        UIproductos Producto = new UIproductos ();
         PanelEscritorio.add(Producto);
         Producto.show();
 
-    }//GEN-LAST:event_MenuProductoActionPerformed
+    }//GEN-LAST:event_productoMenuActionPerformed
 
-    private void MenuCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCategoriaActionPerformed
+    private void categoriaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaMenuActionPerformed
 
-        FrmCategorias Cat= new FrmCategorias();
+        UIcategorias Cat= new UIcategorias();
         PanelEscritorio.add(Cat);
         Cat.show();
 
-    }//GEN-LAST:event_MenuCategoriaActionPerformed
+    }//GEN-LAST:event_categoriaMenuActionPerformed
 
     private void jMenuClientesActionPerformed(java.awt.event.ActionEvent evt) {                                             
        
-        FrmCategorias Cli= new FrmCategorias();
+        UIcategorias Cli= new UIcategorias();
         PanelEscritorio.add(Cli);
         Cli.show();
    
@@ -240,20 +252,21 @@ public class FrmMenu1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMenu1().setVisible(true);
+                new UIMenu().setVisible(true);
             }
         });
     }
@@ -261,18 +274,20 @@ public class FrmMenu1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuAmbClientes;
     private javax.swing.JMenu MenuArticulos;
-    private javax.swing.JMenuItem MenuCategoria;
     private javax.swing.JMenu MenuClientes;
     private javax.swing.JMenuItem MenuIngVtas;
-    private javax.swing.JMenuItem MenuProducto;
     private javax.swing.JMenu MenuVentas;
     private javax.swing.JDesktopPane PanelEscritorio;
-    private javax.swing.JMenu SALIR;
-    private javax.swing.JMenuItem deleteMenuItem;
-    private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem categoriaMenu;
+    private javax.swing.JMenuItem drogaMenu;
+    private javax.swing.JMenuItem exitMenu;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem laboratorioMenu;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem productoMenu;
     // End of variables declaration//GEN-END:variables
 
 }

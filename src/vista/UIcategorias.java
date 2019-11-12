@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 
 
 
-public class FrmCategorias extends javax.swing.JInternalFrame {
+public class UIcategorias extends javax.swing.JInternalFrame {
     AbmCategorias ObjCat;
     AbmCategorias ObjCat2;
     private String NomCatBorrar = null;
     private String NomViejo = null;
  
-    public FrmCategorias() 
+    public UIcategorias() 
     {
         initComponents();
         this.PnlConsultaItem.setVisible(false); //ocultamosel panel de los items

@@ -5,18 +5,18 @@ import javax.swing.JOptionPane;
 
 
 
-public class FrmProductos extends javax.swing.JInternalFrame {
+public class UIproductos extends javax.swing.JInternalFrame {
   
     AbmProductos ObjProdu=new AbmProductos();
     AbmProductos ObjProdu2=new AbmProductos();
     AbmProductos ObjProdu3=new AbmProductos();
     
-    public FrmProductos() 
+    public UIproductos() 
     {
         initComponents();
         
-        ListaLaboratorio.setModel(ObjProdu.MuestroLab());
-        ListaDroga.setModel(ObjProdu.MuestroDroga());
+     //   ListaLaboratorio.setModel(ObjProdu.MuestroLab());
+     //   ListaDroga.setModel(ObjProdu.MuestroDroga());
     }
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) 
@@ -223,7 +223,7 @@ public class FrmProductos extends javax.swing.JInternalFrame {
 
         PanelPrincipal.setBackground(java.awt.Color.lightGray);
 
-        PanelTitulo.setBackground(java.awt.Color.lightGray);
+        PanelTitulo.setBackground(java.awt.Color.gray);
 
         LblTitulo.setText("PRODUCTOS");
         LblTitulo.setToolTipText("");
@@ -245,7 +245,7 @@ public class FrmProductos extends javax.swing.JInternalFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        PanelCuerpo.setBackground(java.awt.Color.lightGray);
+        PanelCuerpo.setBackground(java.awt.Color.gray);
 
         jScrollPane1.setViewportView(ListaLaboratorio);
 
@@ -423,7 +423,7 @@ public class FrmProductos extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelBottons.setBackground(java.awt.Color.lightGray);
+        PanelBottons.setBackground(java.awt.Color.gray);
 
         ButtonAlta.setLabel("ALTA");
 

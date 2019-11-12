@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
+// Alta, baja ,modificacion de la base de datos
 
 public class AbmProductos 
 {

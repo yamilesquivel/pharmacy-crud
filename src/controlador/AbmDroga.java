@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
+// Alta, baja ,modificacion de la lsita en la base de datos
 public class AbmDroga 
 {
     private String Nom;

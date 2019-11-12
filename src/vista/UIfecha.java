@@ -7,13 +7,13 @@ import controlador.AbmFechas;
 
 
 
-public class FrmFecha extends javax.swing.JInternalFrame {
+public class UIfecha extends javax.swing.JInternalFrame {
 
     Date varfechainicio;
     Date varfechafin;
     Date varfechaactual;
     AbmFechas objfecha ;
-    public FrmFecha() 
+    public UIfecha() 
     {
         initComponents();
     }

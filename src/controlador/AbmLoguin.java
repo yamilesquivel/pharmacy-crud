@@ -7,6 +7,8 @@ import modelo.Conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+// Alta, baja ,modificacion de la base de datos
+
 public class AbmLoguin
 {
     private int id;

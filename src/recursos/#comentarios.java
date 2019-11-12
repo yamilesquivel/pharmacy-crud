@@ -1,0 +1,3 @@
+//
+//Este paquete va a ser utilizado como carpeta contededora para recurso
+//visiaes imagenes,iconos,emoticonos,etc...

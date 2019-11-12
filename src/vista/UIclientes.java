@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 
 
 
-public class FrmClientes extends javax.swing.JInternalFrame {
+public class UIclientes extends javax.swing.JInternalFrame {
     AbmClientes ObjClientes;
     AbmClientes ObjClientes2;
     private String NomClientesBorrar = null;
     private String NomViejo = null;
  
-    public FrmClientes() 
+    public UIclientes() 
     {
         initComponents();
         this.PnlConsultaItem.setVisible(false); //ocultamosel panel de los items

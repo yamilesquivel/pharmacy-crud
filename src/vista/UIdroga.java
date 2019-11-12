@@ -3,7 +3,7 @@ import controlador.AbmDroga;
 import javax.swing.JOptionPane;
 // import javax.swing.DefaultListModel;
 
-public class FrmDroga extends javax.swing.JInternalFrame {
+public class UIdroga extends javax.swing.JInternalFrame {
 AbmDroga ObjDroga;
 AbmDroga ObjDroga2;
 AbmDroga ObjDroga3=new AbmDroga();
@@ -15,7 +15,7 @@ String Nom =null;
 String NomLab= null;
 int IdLab=0;
 
-    public FrmDroga() {
+    public UIdroga() {
         initComponents();
         this.PanelConsulta.setVisible(false);
         this.BtnCancelar.setVisible(false);
