@@ -8,7 +8,7 @@ import controlador.AbmFechas;
 
 
 public class UIfecha extends javax.swing.JInternalFrame {
-
+// inicio clases que voy a necesitar
     Date varfechainicio;
     Date varfechafin;
     Date varfechaactual;
