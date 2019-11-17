@@ -37,8 +37,11 @@ public class UIfecha extends javax.swing.JInternalFrame {
         fechafinlbl = new javax.swing.JLabel();
         fechaactuallbl = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(254, 147, 9));
         setClosable(true);
         setTitle("Fecha");
+
+        jPanel1.setBackground(new java.awt.Color(254, 147, 9));
 
         jlblfeha.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jlblfeha.setText("Fecha");

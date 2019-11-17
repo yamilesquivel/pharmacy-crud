@@ -35,7 +35,6 @@ int IdLab=0;
     private void initComponents() {
 
         PanelPrincipal = new javax.swing.JPanel();
-        LblTituloDroga = new org.edisoncor.gui.label.LabelMetric();
         LblNom = new org.edisoncor.gui.label.LabelRect();
         TxtNom = new org.edisoncor.gui.textField.TextFieldRoundBackground();
         PanelBotones = new javax.swing.JPanel();
@@ -54,21 +53,23 @@ int IdLab=0;
         PanelListaLab = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ListaLaboratorio = new javax.swing.JList<>();
+        drogajLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 153, 102));
+        setBackground(new java.awt.Color(254, 147, 9));
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
         setTitle("DROGA");
 
-        PanelPrincipal.setBackground(new java.awt.Color(255, 153, 102));
-
-        LblTituloDroga.setText("NOMBRE DE LA DROGA");
-        LblTituloDroga.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        LblTituloDroga.setName(""); // NOI18N
+        PanelPrincipal.setBackground(new java.awt.Color(254, 147, 9));
 
         LblNom.setText("NOMBRE");
 
+        TxtNom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNomActionPerformed(evt);
+            }
+        });
         TxtNom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TxtNomKeyTyped(evt);
@@ -206,9 +207,9 @@ int IdLab=0;
         PanelConsultaLayout.setHorizontalGroup(
             PanelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelConsultaLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addGap(23, 23, 23))
         );
         PanelConsultaLayout.setVerticalGroup(
             PanelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,47 +234,51 @@ int IdLab=0;
             PanelListaLabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelListaLabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        drogajLabel1.setFont(new java.awt.Font("Abyssinica SIL", 1, 48)); // NOI18N
+        drogajLabel1.setForeground(new java.awt.Color(9, 9, 9));
+        drogajLabel1.setText("DROGA");
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
         PanelPrincipalLayout.setHorizontalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(LblNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(TxtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addComponent(LblNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TxtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(drogajLabel1)))
+                .addGap(74, 74, 74)
                 .addComponent(PanelListaLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(PanelBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LblTituloDroga, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(213, 213, 213))
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LblTituloDroga, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                        .addGap(58, 58, 58)
                         .addComponent(PanelListaLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
+                        .addGap(80, 80, 80)
+                        .addComponent(drogajLabel1)
+                        .addGap(98, 98, 98)
                         .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LblNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
+                        .addGap(50, 50, 50)
                         .addComponent(PanelConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -426,6 +431,10 @@ int IdLab=0;
         ObjDroga2 = new AbmDroga();
         ListaDrogas.setModel(ObjDroga2.Muestro()); // error de nullpointer
     }//GEN-LAST:event_BtnConsulta1ActionPerformed
+
+    private void TxtNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNomActionPerformed
     private void Limpiar()
     {
         this.TxtNom.setText(null);
@@ -455,7 +464,6 @@ int IdLab=0;
     private org.edisoncor.gui.button.ButtonAero BtnModif;
     private org.edisoncor.gui.button.ButtonAero BtnSalir;
     private org.edisoncor.gui.label.LabelRect LblNom;
-    private org.edisoncor.gui.label.LabelMetric LblTituloDroga;
     private javax.swing.JList<String> ListaDrogas;
     private javax.swing.JList<String> ListaLaboratorio;
     private javax.swing.JPanel PanelBotones;
@@ -463,6 +471,7 @@ int IdLab=0;
     private javax.swing.JPanel PanelListaLab;
     private javax.swing.JPanel PanelPrincipal;
     private org.edisoncor.gui.textField.TextFieldRoundBackground TxtNom;
+    private javax.swing.JLabel drogajLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

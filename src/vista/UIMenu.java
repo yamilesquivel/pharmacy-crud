@@ -9,11 +9,11 @@ public class UIMenu extends javax.swing.JFrame {
     public UIMenu() {
         initComponents();
         
-        this.setTitle("GESTOR  DE FARMACIA");
+        this.setTitle("::::::::::::::GESTOR  DE FARMACIA::::::::::::::::::::::::::::");
         this.setLocationRelativeTo(null);// para que el formulario aparezca centrado en la pantalla
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-       
         this.PanelEscritorio.setBackground(Color.red);
+        PanelEscritorio.setSize(imagen.getSize());
     }
 
     
@@ -22,17 +22,18 @@ public class UIMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelEscritorio = new javax.swing.JDesktopPane();
+        imagen = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         MenuArticulos = new javax.swing.JMenu();
-        categoriaMenu = new javax.swing.JMenuItem();
         productoMenu = new javax.swing.JMenuItem();
         laboratorioMenu = new javax.swing.JMenuItem();
         drogaMenu = new javax.swing.JMenuItem();
+        categoriaMenu = new javax.swing.JMenuItem();
         exitMenu = new javax.swing.JMenuItem();
         MenuClientes = new javax.swing.JMenu();
         MenuAmbClientes = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         MenuVentas = new javax.swing.JMenu();
         MenuIngVtas = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -40,22 +41,35 @@ public class UIMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/tostadodecafe.duckduckgo.com.png"))); // NOI18N
+
+        PanelEscritorio.setLayer(imagen, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout PanelEscritorioLayout = new javax.swing.GroupLayout(PanelEscritorio);
+        PanelEscritorio.setLayout(PanelEscritorioLayout);
+        PanelEscritorioLayout.setHorizontalGroup(
+            PanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEscritorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imagen)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelEscritorioLayout.setVerticalGroup(
+            PanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEscritorioLayout.createSequentialGroup()
+                .addComponent(imagen)
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        menuBar.setBackground(new java.awt.Color(13, 27, 247));
+        menuBar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(115, 108, 108))); // NOI18N
+        menuBar.setForeground(new java.awt.Color(161, 0, 0));
+
         MenuArticulos.setMnemonic('f');
-        MenuArticulos.setText("Articulos");
+        MenuArticulos.setText("ITEMS FARMACIA");
 
-        categoriaMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_MASK));
-        categoriaMenu.setMnemonic('o');
-        categoriaMenu.setText("Categoria");
-        categoriaMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                categoriaMenuActionPerformed(evt);
-            }
-        });
-        MenuArticulos.add(categoriaMenu);
-
-        productoMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         productoMenu.setMnemonic('a');
-        productoMenu.setText("Producto");
+        productoMenu.setText("PRODUCTO");
         productoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productoMenuActionPerformed(evt);
@@ -63,7 +77,7 @@ public class UIMenu extends javax.swing.JFrame {
         });
         MenuArticulos.add(productoMenu);
 
-        laboratorioMenu.setText("Laboratorio");
+        laboratorioMenu.setText("LABORATORIO");
         laboratorioMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 laboratorioMenuActionPerformed(evt);
@@ -71,13 +85,22 @@ public class UIMenu extends javax.swing.JFrame {
         });
         MenuArticulos.add(laboratorioMenu);
 
-        drogaMenu.setText("Droga");
+        drogaMenu.setText("DROGA");
         drogaMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 drogaMenuActionPerformed(evt);
             }
         });
         MenuArticulos.add(drogaMenu);
+
+        categoriaMenu.setMnemonic('o');
+        categoriaMenu.setText("CATEGORIA");
+        categoriaMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoriaMenuActionPerformed(evt);
+            }
+        });
+        MenuArticulos.add(categoriaMenu);
 
         exitMenu.setMnemonic('x');
         exitMenu.setText("Exit");
@@ -91,16 +114,15 @@ public class UIMenu extends javax.swing.JFrame {
         menuBar.add(MenuArticulos);
 
         MenuClientes.setMnemonic('e');
-        MenuClientes.setText("Clientes");
+        MenuClientes.setText("CLIENTES");
         MenuClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuClientesActionPerformed(evt);
             }
         });
 
-        MenuAmbClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         MenuAmbClientes.setMnemonic('t');
-        MenuAmbClientes.setText("Ingreso de Clientes");
+        MenuAmbClientes.setText("INGRESAR");
         MenuAmbClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuAmbClientesActionPerformed(evt);
@@ -108,20 +130,19 @@ public class UIMenu extends javax.swing.JFrame {
         });
         MenuClientes.add(MenuAmbClientes);
 
-        jMenuItem5.setText("Consulta de Clientes");
-        MenuClientes.add(jMenuItem5);
+        jMenuItem1.setText("ELIMINAR");
+        MenuClientes.add(jMenuItem1);
 
-        jMenuItem6.setText("Modificacion de Clientes");
-        MenuClientes.add(jMenuItem6);
+        jMenuItem2.setText("MODIFICAR");
+        MenuClientes.add(jMenuItem2);
 
         menuBar.add(MenuClientes);
 
         MenuVentas.setMnemonic('h');
-        MenuVentas.setText("Ventas");
+        MenuVentas.setText("VENTAS");
 
-        MenuIngVtas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         MenuIngVtas.setMnemonic('c');
-        MenuIngVtas.setText("Ingreso de Ventas");
+        MenuIngVtas.setText("INGRESO");
         MenuIngVtas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuIngVtasActionPerformed(evt);
@@ -129,10 +150,10 @@ public class UIMenu extends javax.swing.JFrame {
         });
         MenuVentas.add(MenuIngVtas);
 
-        jMenuItem3.setText("Consulta de Ventas");
+        jMenuItem3.setText("MODIFICAR");
         MenuVentas.add(jMenuItem3);
 
-        jMenuItem4.setText("Modificacion de Ventas");
+        jMenuItem4.setText("ELIMINAR");
         MenuVentas.add(jMenuItem4);
 
         menuBar.add(MenuVentas);
@@ -143,11 +164,14 @@ public class UIMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 1018, Short.MAX_VALUE)
+            .addComponent(PanelEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -155,7 +179,7 @@ public class UIMenu extends javax.swing.JFrame {
 
     private void MenuIngVtasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuIngVtasActionPerformed
 
-        UIventas Vta= new UIventas();
+        UIventasIns Vta= new UIventasIns();
         PanelEscritorio.add(Vta);
         Vta.show();
         /*FrmVenta Vta= new FrmVenta();
@@ -281,10 +305,11 @@ public class UIMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem categoriaMenu;
     private javax.swing.JMenuItem drogaMenu;
     private javax.swing.JMenuItem exitMenu;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem laboratorioMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem productoMenu;

@@ -46,12 +46,13 @@ public class UIlaboratorio extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaLaboratorios = new javax.swing.JList<>();
 
+        setBackground(new java.awt.Color(254, 147, 9));
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
         setTitle("Laboratorio");
 
-        PanelPPalCat.setBackground(new java.awt.Color(255, 255, 204));
+        PanelPPalCat.setBackground(new java.awt.Color(254, 147, 9));
 
         PanelBtnCat.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -174,11 +175,18 @@ public class UIlaboratorio extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        LblCatProd.setFont(new java.awt.Font("Abyssinica SIL", 1, 24)); // NOI18N
+        LblCatProd.setForeground(new java.awt.Color(25, 13, 13));
         LblCatProd.setText("LABORATORIOS DE PRODUCTOS");
 
         LblNombre.setText("NOMBRE");
 
         TxtNombre.setText("ingrese el nombre aqui");
+        TxtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNombreActionPerformed(evt);
+            }
+        });
         TxtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TxtNombreKeyTyped(evt);
@@ -214,33 +222,35 @@ public class UIlaboratorio extends javax.swing.JInternalFrame {
             .addGroup(PanelPPalCatLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelBtnCat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelPPalCatLayout.createSequentialGroup()
+                        .addComponent(PanelBtnCat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPPalCatLayout.createSequentialGroup()
                         .addComponent(LblNombre)
-                        .addGap(31, 31, 31)
-                        .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPPalCatLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-            .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                .addGap(228, 228, 228)
-                .addComponent(LblCatProd)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addGroup(PanelPPalCatLayout.createSequentialGroup()
+                        .addComponent(LblCatProd)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         PanelPPalCatLayout.setVerticalGroup(
             PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPPalCatLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LblCatProd)
-                .addGap(47, 47, 47)
-                .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LblNombre)
-                    .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelPPalCatLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelPPalCatLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(LblCatProd)
+                        .addGap(54, 54, 54)
+                        .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblNombre)
+                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(PanelBtnCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -369,6 +379,10 @@ public class UIlaboratorio extends javax.swing.JInternalFrame {
     private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnBuscarActionPerformed
+
+    private void TxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNombreActionPerformed
 
  private void Ocultar()
     {

@@ -46,14 +46,16 @@ public class UIcategorias extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaCategorias = new javax.swing.JList<>();
 
+        setBackground(new java.awt.Color(254, 147, 9));
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
         setTitle("Categoria");
 
-        PanelPPalCat.setBackground(new java.awt.Color(255, 255, 204));
+        PanelPPalCat.setBackground(new java.awt.Color(254, 147, 9));
 
         PanelBtnCat.setBackground(new java.awt.Color(204, 255, 204));
+        PanelBtnCat.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         BtnAltas.setText("ALTAS");
         BtnAltas.addActionListener(new java.awt.event.ActionListener() {
@@ -140,14 +142,13 @@ public class UIcategorias extends javax.swing.JInternalFrame {
                 .addGroup(PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelBtnCatLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
-                        .addComponent(BtnConsultas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnSalir))
+                        .addComponent(BtnConsultas))
                     .addGroup(PanelBtnCatLayout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(BtnCancelar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(72, 72, 72)
+                        .addComponent(BtnSalir)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         PanelBtnCatLayout.setVerticalGroup(
             PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,26 +157,34 @@ public class UIcategorias extends javax.swing.JInternalFrame {
                 .addGroup(PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnBajas)
                     .addComponent(BtnConsultas)
-                    .addComponent(BtnSalir)
                     .addComponent(BtnModificaciones)
                     .addComponent(BtnAltas))
-                .addGap(18, 18, 18)
                 .addGroup(PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBtnCatLayout.createSequentialGroup()
-                        .addGap(0, 4, Short.MAX_VALUE)
-                        .addGroup(PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnActualizar)
-                            .addComponent(BtnBuscar)))
                     .addGroup(PanelBtnCatLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnEliminar)
-                            .addComponent(BtnCancelar))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBtnCatLayout.createSequentialGroup()
+                                .addGap(0, 4, Short.MAX_VALUE)
+                                .addGroup(PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(BtnActualizar)
+                                    .addComponent(BtnBuscar)))
+                            .addGroup(PanelBtnCatLayout.createSequentialGroup()
+                                .addGroup(PanelBtnCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BtnEliminar)
+                                    .addComponent(BtnCancelar))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBtnCatLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnSalir)
+                        .addGap(27, 27, 27))))
         );
 
+        LblCatProd.setFont(new java.awt.Font("Abyssinica SIL", 1, 24)); // NOI18N
+        LblCatProd.setForeground(new java.awt.Color(33, 9, 9));
         LblCatProd.setText("CATEGORIA DE PRODUCTOS");
 
+        LblNombre.setForeground(new java.awt.Color(19, 7, 7));
         LblNombre.setText("NOMBRE");
 
         TxtNombre.setText("ingrese el nombre aqui");
@@ -195,9 +204,9 @@ public class UIcategorias extends javax.swing.JInternalFrame {
         PnlConsultaItemLayout.setHorizontalGroup(
             PnlConsultaItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlConsultaItemLayout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         PnlConsultaItemLayout.setVerticalGroup(
             PnlConsultaItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,16 +223,17 @@ public class UIcategorias extends javax.swing.JInternalFrame {
             .addGroup(PanelPPalCatLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelBtnCat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                        .addComponent(LblNombre)
-                        .addGap(31, 31, 31)
                         .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LblCatProd)
-                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(PanelPPalCatLayout.createSequentialGroup()
+                                .addComponent(LblNombre)
+                                .addGap(54, 54, 54)
+                                .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(66, 66, 66)
                         .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(PanelBtnCat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PanelPPalCatLayout.setVerticalGroup(
@@ -232,13 +242,14 @@ public class UIcategorias extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPPalCatLayout.createSequentialGroup()
-                        .addComponent(LblCatProd)
-                        .addGap(47, 47, 47)
+                        .addGap(11, 11, 11)
+                        .addComponent(LblCatProd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
                         .addGroup(PanelPPalCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LblNombre)
                             .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(PnlConsultaItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(PanelBtnCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
