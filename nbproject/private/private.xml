@@ -3,14 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/controlador/AbmClientes.java</file>
-            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIventas.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIventasIns.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIfecha.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIlaboratorio.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIventasMod.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/controlador/AbmFechas.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIcategorias.java</file>
             <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIproductos.java</file>
-            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/controlador/AbmDroga.java</file>
-            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/controlador/AbmCategorias.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIclientes.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIdroga.java</file>
             <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/controlador/AbmProductos.java</file>
-            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/controlador/AbmVentas.java</file>
             <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/vista/UIMenu.java</file>
+            <file>file:/home/yamil/Documentos/TrayectoProgramador-111mil-cfp/cfp31proyectoFarmacia/src/controlador/AbmVentas.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,6 +1,6 @@
 
 package controlador;
-
+//
 import modelo.Conexion;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
