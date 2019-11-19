@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;     // para tomar os datos  pasaro a strings
 import java.text.DateFormat;            //con esto le doy nnuevo formato
 import controlador.AbmFechas;        // con esto manejo los datos de fechas y mandarla a la bbdd
 
-
+//
 
 public class UIfecha extends javax.swing.JInternalFrame {
 
